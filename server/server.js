@@ -12,7 +12,18 @@ const data = [
 ]
 
 app.get('/data', (req, res) => {
-  res.send(data);
+  const startIndex = req.query.startIndex;
+  const limit = req.query.limit;
+
+  let message = Array.from(data);
+  if (!startIndex) {
+    message = message.slice(startIndex, data.length);
+  }
+  if (!limit) {
+    message = message.slice(0, limit);
+  }
+
+  res.send(message);
 })
 
 app.listen(port, () => {
