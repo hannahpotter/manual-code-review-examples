@@ -10,11 +10,11 @@ public class Player
         this.score = score;
     }
 
-    public getName() {
+    public String getName() {
         return this.name;
     }
 
-    public getScore() {
+    public int getScore() {
         return this.score;
     }
 }
